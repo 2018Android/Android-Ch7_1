@@ -51,15 +51,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v.getId() != R.id.frame) {return false;}
         int act = event.getAction();
         switch (act){
-            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_DOWN: //手指第1個接觸的點的座標
                 output_touch.setText("ACTION_DOWN");
                 output_touch.setTextColor(Color.RED);
                 break;
-            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_UP: //手指離開螢幕，取得最後接觸點的座標
                 output_touch.setText("ACTION_UP");
                 output_touch.setTextColor(Color.GREEN);
                 break;
-            case MotionEvent.ACTION_MOVE: //顯示目前座標和尺寸
+            case MotionEvent.ACTION_MOVE: //移動時會顯示目前座標和尺寸
                 float evt_x = event.getX(); //取得X座標
                 float evt_y = event.getY(); //取得Y座標
                 int v_w = v.getWidth();    //取得寬

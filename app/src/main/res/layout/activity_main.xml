@@ -54,7 +54,8 @@
             android:id="@+id/btn_touch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_marginLeft="125dp"
+            android:text="觸碰區域事件" />
 
         <TextView
             android:id="@+id/txv_touch"
