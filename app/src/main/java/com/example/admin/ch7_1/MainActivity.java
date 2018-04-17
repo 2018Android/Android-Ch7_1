@@ -2,9 +2,11 @@ package com.example.admin.ch7_1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
     private TextView output;
@@ -24,5 +26,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void onClick(View v){
         output.setText("觸發Click事件...");
+    }
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            Toast.makeText(this, "按下 KEYCODE_BACK鍵...",Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+    public boolean onKeyUp(int keyCode, KeyEvent event){
+        output.setText("按下KeyCode按鍵碼"+keyCode);
+        return super.onKeyUp(keyCode, event);
     }
 }
